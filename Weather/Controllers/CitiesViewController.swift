@@ -30,10 +30,10 @@ class CitiesViewController: UIViewController {
     }
 
     //MARK: - Get weather
-    func getWeather(){
+    private func getWeather(){
         activityIndicator()
         indicator.startAnimating()
-        Network().getCitesWeather(cities: citiesArray) { [weak self] (weather)  in
+        Network.shared.getCitesWeather(cities: citiesArray) { [weak self] (weather)  in
             guard let self = self else { return }
             self.cities.append(weather)
             DispatchQueue.main.async {

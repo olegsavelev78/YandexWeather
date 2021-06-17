@@ -59,7 +59,7 @@ extension CitiesViewController: UISearchBarDelegate {
     }
     
     //MARK: - Constraints
-    func constraintsSettings(){
+    private func constraintsSettings(){
         NSLayoutConstraint.activate([
             citySearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             citySearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),

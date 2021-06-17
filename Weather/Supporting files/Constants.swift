@@ -7,4 +7,6 @@
 
 import Foundation
 
-let apikey = "c14069a1-8df3-4cb9-9717-712c43d791b3"
+var citiesArray: [String] = ["Москва", "Екатеринбург", "Пермь", "Нижневартовск", "Санкт-Петербург", "Ханты-Мансийск", "Омск", "Новосибирск", "Красноярск", "Томск"]
+let iconUrlY = "https://yastatic.net/weather/i/icons/blueye/color/svg/"
+

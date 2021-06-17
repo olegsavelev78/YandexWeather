@@ -10,9 +10,7 @@ import UIKit
 class CityViewController: UIViewController {
     
     //MARK: -Variables
-    var cities: [Weather] = []
     var cityData: Weather?
-    var saveCompletion: (() -> Void)?
     
     
     //MARK: - Outlets
@@ -28,18 +26,6 @@ class CityViewController: UIViewController {
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
-    //MARK: - Actions
-    @IBAction func addButton(_ sender: Any) {
-        guard let data = cityData else { return }
-        
-        let mainVC = storyboard?.instantiateViewController(identifier: "Table") as! CitiesViewController
-        mainVC.cities.insert(data, at: 0)
-
-        
-        print(cities.count)
-
-        dismiss(animated: true, completion: saveCompletion)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +48,7 @@ class CityViewController: UIViewController {
         loadIcon(url: data)
     }
     
-    func loadIcon(url: Weather){
+    private func loadIcon(url: Weather){
         guard let iconUrl = URL(string: iconUrlY + url.icon + ".svg") else { return }
         DispatchQueue.global().async {
             let svgData = try! Data(contentsOf: iconUrl)
